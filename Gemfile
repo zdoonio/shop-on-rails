@@ -27,8 +27,26 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use libary for images
+gem 'paperclip', '~> 6.1'
+# Use simple forms
+gem 'simple_form', '~> 4.0', '>= 4.0.1'
+# Use bootstrap 4 gem
+gem 'bootstrap', '~> 4.1.3'
+# Use bootstrap twitter rails
+gem 'twitter-bootstrap-rails'
+# Use jquery for rails
+gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+# Use gem to fast search of products
+gem 'ransack'
+# gem for smart pagination
+gem 'kaminari'
+# Polish version of rails
+gem 'rails-i18n'
+# State machine gem
+gem 'statesman'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -48,6 +66,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'faker'
+  gem 'letter_opener'
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :test do
