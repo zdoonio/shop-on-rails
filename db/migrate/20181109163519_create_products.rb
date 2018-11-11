@@ -4,7 +4,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :description
       t.text :long_description
-      t.string :photo
       t.decimal :price
       t.belongs_to :category, foreign_key: true
 
