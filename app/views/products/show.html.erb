@@ -1,2 +1,19 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5">
+      <h1><%= Faker::Hacker.noun %></h1>
+      <p class="lead"><%= Faker::Hacker.say_something_smart %></p>
+      <%= simple_format(Faker::Lorem.paragraphs(3).join("\n\n")) %>
+
+      <p class="lead"><%= number_to_currency(Faker::Number.decimal(2, 2)) %></p>
+      <p>
+        <%= link_to "#", class: "btn btn-primary" do %>
+          <%= fa_icon "shopping-basket" %> Dodaj do koszyka
+        <% end %>
+      </p>
+    </div>
+    <div class="col-md-7">
+      <%= image_tag "http://www.wakaama.co.nz/imagecache?u=http%3A%2F%2Fs3.wakaama.co.nz%2Fstory%2F1001604%2Fphotos%2FMaungatapu_e.jpg&w=200" %>
+    </div>
+  </div>
+</div>
