@@ -1,0 +1,31 @@
+<h1>Produkty</h1>
+
+<%= link_to new_admin_product_path, class: "btn btn-success" do %>
+  <%= fa_icon "fa-plus" %> Dodaj nowy produkt
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Cena</th>
+      <th>Kategoria</th>
+      <th>Akcja</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= number_to_currency product.price %></td>
+        <td><%= product.category.name %></td>
+        <td>
+          <%= link_to "Edycja", edit_admin_product_path(product), class: "btn btn-primary btn-xs" %>
+          <%= link_to "Usuń", product, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-xs" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @products %>

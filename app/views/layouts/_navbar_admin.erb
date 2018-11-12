@@ -1,0 +1,11 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand navbar-header" href="<%= admin_root_path %>"> Orchid Beauty - Admin Panel</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li <% if [params[:controller]] == ["admin/products"] %> class="active" <% end %>> <%= link_to "Produkty", admin_products_path %> </li>
+      <li <% if [params[:controller]] == ["admin/categories"] %> class="active" <% end %>> <%= link_to "Kategorie", admin_categories_path %> </li>
+    </ul>
+  </div>
+</nav>
