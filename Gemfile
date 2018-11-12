@@ -33,8 +33,6 @@ gem 'paperclip', '~> 6.1'
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
 # Use bootstrap 4 gem
 gem 'bootstrap', '~> 4.1.3'
-# Use bootstrap twitter rails
-gem 'twitter-bootstrap-rails'
 # Use font awensome
 gem 'font-awesome-rails'
 # Use jquery for rails

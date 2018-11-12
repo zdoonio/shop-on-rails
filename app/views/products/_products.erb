@@ -11,7 +11,7 @@
             <p><%= simple_format(truncate(product.description, length: 90)) %></p>
             <p class="lead"><%= number_to_currency product.price %></p>
             <p>
-              <%= link_to "#", class: "btn btn-primary" do %>
+              <%= link_to add_product_cart_path(product_id: product.id), method: :post, class: "btn btn-primary" do %>
                 <%= fa_icon "shopping-basket" %> Dodaj do koszyka
               <% end %>
             </p>

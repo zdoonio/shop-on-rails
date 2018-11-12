@@ -1,4 +1,4 @@
-class Order < ApplicationRecord
+class Order < ActiveRecord::Base
   include Statesman::Adapters::ActiveRecordQueries
 
   belongs_to :shipping_type
@@ -7,7 +7,7 @@ class Order < ApplicationRecord
   has_many :transitions, class_name: "OrderTransition", autosave: false
 
   delegate :can_transition_to?, :transition_to!, :transition_to, :current_state,
-           to: state_machine
+           to: :state_machine
 
   def state_machine
     @state_machine ||= OrderStateMachine.new(self, transition_class: OrderTransition,

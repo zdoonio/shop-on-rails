@@ -9,6 +9,14 @@
       <li <% if [params[:controller], params[:action]] == ["static", "terms"] %> class="active" <% end %>> <%= link_to "Regulamin", terms_path %> </li>
       <li <% if [params[:controller], params[:action]] == ["static", "shipping"] %> class="active" <% end %>> <%= link_to "Dostawa", shipping_path %> </li>
       <li <% if [params[:controller], params[:action]] == ["static", "about"] %> class="active" <% end %>> <%= link_to "O sklepie", about_path %> </li>
+      <li>
+        <%= link_to cart_path do %>
+          <%= fa_icon "shopping-basket" %>
+          <%= current_cart.line_items.map { |e| e.quantity }.sum %>
+          produktów za
+          <%= number_to_currency(current_cart.line_items.map { |e| e.full_price}.sum) %>
+        <% end %>
+      </li>
     </ul>
   </div>
 </nav>

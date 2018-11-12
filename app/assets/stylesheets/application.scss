@@ -21,10 +21,15 @@ html, body {
   overflow: auto;
 }
 
-
 nav {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 
 }
 
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
 
