@@ -4,11 +4,19 @@
   <%= fa_icon "fa-plus" %> Dodaj nowy produkt
 <% end %>
 
+<div class="search-form">
+  <%= search_form_for [:admin, @q] do |form| %>
+    <%= form.text_field :name_or_description_or_long_description_cont, placeholder: "Szukaj tekstu" %>
+    <%= form.text_field :price_gt, placeholder: "Cena >" %>
+    <%= form.submit "Szukaj" %>
+  <% end %>
+</div>
+
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Nazwa</th>
-      <th>Cena</th>
+      <th><%= sort_link(@q, :name, "Nazwa") %></th>
+      <th><%= sort_link(@q, :price, "Cena") %></th>
       <th>Kategoria</th>
       <th>Akcja</th>
     </tr>
