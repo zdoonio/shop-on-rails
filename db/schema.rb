@@ -10,12 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_11_164305) do
+ActiveRecord::Schema.define(version: 2018_11_12_135956) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "city"
+    t.string "zip_code"
+    t.string "street"
+    t.string "email"
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_addresses_on_order_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer "product_id"
+    t.decimal "unit_price"
+    t.integer "quantity"
+    t.integer "order_id"
+    t.string "item_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["product_id"], name: "index_line_items_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.text "comment"
+    t.integer "shipping_type_id"
+    t.decimal "shipping_cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shipping_type_id"], name: "index_orders_on_shipping_type_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -31,6 +65,13 @@ ActiveRecord::Schema.define(version: 2018_11_11_164305) do
     t.bigint "photo_file_size"
     t.datetime "photo_updated_at"
     t.index ["category_id"], name: "index_products_on_category_id"
+  end
+
+  create_table "shipping_types", force: :cascade do |t|
+    t.string "name"
+    t.decimal "cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
