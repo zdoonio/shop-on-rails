@@ -3,8 +3,10 @@ class Order < ActiveRecord::Base
 
   belongs_to :shipping_type
   has_many :line_items
-  has_one :address
+  has_one :address, :dependent => :destroy
   has_many :transitions, class_name: "OrderTransition", autosave: false
+
+  accepts_nested_attributes_for :address
 
   validates :shipping_type, presence: true, allow_nil: true
 

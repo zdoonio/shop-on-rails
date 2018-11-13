@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_141607) do
+ActiveRecord::Schema.define(version: 2018_11_13_131437) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "first_name"
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 2018_11_12_141607) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "documents", force: :cascade do |t|
+    t.text "share"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "line_items", force: :cascade do |t|
     t.integer "product_id"
     t.decimal "unit_price"
@@ -45,7 +51,9 @@ ActiveRecord::Schema.define(version: 2018_11_12_141607) do
 
   create_table "order_transitions", force: :cascade do |t|
     t.string "to_state", null: false
-    t.text "metadata", default: ""
+    t.text "metadata", default: "{}"
+    t.text "share", default: "{}"
+    t.text "string", default: "{}"
     t.integer "sort_key", null: false
     t.integer "order_id", null: false
     t.boolean "most_recent", null: false

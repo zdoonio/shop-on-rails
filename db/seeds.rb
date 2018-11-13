@@ -12,7 +12,7 @@ end
 category_ids = Category.pluck(:id)
 
 print "Product"
-200.times do
+100.times do
   product = Product.create! name: "#{Faker::Hacker.verb} #{Faker::Hacker.noun}".capitalize,
                             description: Faker::Hacker.say_something_smart,
                             long_description: Faker::Lorem.paragraphs(3).join("\n\n"),

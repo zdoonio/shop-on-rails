@@ -1,2 +1,22 @@
-<h1>Cart#edit</h1>
-<p>Find me in app/views/cart/edit.html.erb</p>
+<h1>Dostawa</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= simple_form_for @cart, url: cart_path do |form| %>
+      <%= form.simple_fields_for :address do |address| %>
+        <%= address.input :email %>
+        <%= address.input :first_name %>
+        <%= address.input :last_name %>
+        <%= address.input :city %>
+        <%= address.input :zip_code %>
+        <%= address.input :street %>
+      <% end %>
+      <%= form.association :shipping_type, as: :select, prompt: nil %>
+      <%= form.input :comment %>
+      <%= button_tag class: "btn btn-success btn-lg" do %>
+        Zapisz i przejdź dalej
+        <%= fa_icon "step-forward" %>
+      <% end %>
+     <% end %>
+  </div>
+</div>
