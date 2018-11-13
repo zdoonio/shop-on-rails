@@ -1,8 +1,8 @@
 <% @products.each_slice(3) do |slice| %>
   <div class="row">
     <% slice.each do |product| %>
-      <div class="col-md-4">
-        <div class="thumbnail">
+      <div class="col-md-4 product-item" onclick="to_product_preview(this)">
+        <div class="thumbnail product-thumb">
           <%= link_to products_path(1) do %>
             <%= image_tag product.photo.url(:medium) %>
           <% end %>
@@ -11,7 +11,7 @@
             <p><%= simple_format(truncate(product.description, length: 90)) %></p>
             <p class="lead"><%= number_to_currency product.price %></p>
             <p>
-              <%= link_to add_product_cart_path(product_id: product.id), method: :post, class: "btn btn-primary" do %>
+              <%= link_to add_product_cart_path(product_id: product.id), method: :post, class: "btn btn-primary btn--floating box-shadow-wide preview-meta" do %>
                 <%= fa_icon "shopping-basket" %> Dodaj do koszyka
               <% end %>
             </p>

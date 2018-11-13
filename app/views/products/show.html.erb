@@ -1,19 +1,19 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-5 product-item">
       <h1><%= @product.name %></h1>
       <p class="lead"><%= @product.description %></p>
       <%= simple_format(@product.long_description) %>
 
       <p class="lead"><%= number_to_currency @product.price %></p>
       <p>
-        <%= link_to add_product_cart_path(product_id: @product.id), method: :post, class: "btn btn-primary" do %>
+        <%= link_to add_product_cart_path(product_id: @product.id), method: :post, class: "btn btn-primary btn--floating box-shadow-wide preview-meta" do %>
           <%= fa_icon "shopping-basket" %> Dodaj do koszyka
         <% end %>
       </p>
     </div>
     <div class="col-md-7">
-      <%= image_tag @product.photo.url(:medium) %>
+      <%= image_tag @product.photo.url(:medium), class: "product-thumb" %>
     </div>
   </div>
 </div>
