@@ -13,7 +13,9 @@ class ApplicationController < ActionController::Base
   def current_cart_or_create
     cart = current_cart
     if cart.new_record?
-      cart.save
+      shipping_type = ShippingType.find(1)
+      cart.shipping_type = shipping_type
+      cart.save!
       session[:order_id] = cart.id
     end
     cart

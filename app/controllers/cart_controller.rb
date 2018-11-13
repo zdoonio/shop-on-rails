@@ -1,5 +1,6 @@
 class CartController < ApplicationController
   def show
+    @cart = current_cart
   end
 
   def edit
@@ -21,7 +22,7 @@ class CartController < ApplicationController
       unit_price: product.price,
       item_name: product.name
     end
-    redirect_to :back, notice: "Dodano produkt do koszyka"
+    redirect_back(fallback_location: root_path, notice: "Dodano produkt do koszyka")
   end
 
   def remove_product
@@ -31,7 +32,7 @@ class CartController < ApplicationController
     if item
       item.destroy
     end
-    redirect_to :back, notice: "Usunięto produkt z koszyka"
+    redirect_back(fallback_location: root_path, notice: "Usunięto produkt z koszyka")
 
   end
 
