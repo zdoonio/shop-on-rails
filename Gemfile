@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'simplecov', require: false, group: [:test, :development]
 
+#gem users gem
+gem 'devise'
 # use quilljs to edit html posts WYSWIG
 gem 'quilljs-rails'
 # Use libary for images

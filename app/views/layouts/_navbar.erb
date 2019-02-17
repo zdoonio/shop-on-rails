@@ -9,6 +9,12 @@
       <li <% if [params[:controller], params[:action]] == ["static", "terms"] %> class="active" <% end %>> <%= link_to "Regulamin", terms_path %> </li>
       <li <% if [params[:controller], params[:action]] == ["static", "shipping"] %> class="active" <% end %>> <%= link_to "Dostawa", shipping_path %> </li>
       <li <% if [params[:controller], params[:action]] == ["static", "about"] %> class="active" <% end %>> <%= link_to "O sklepie", about_path %> </li>
+      <% if current_user %>
+        <li class="nav-item"><%= link_to "Wyloguj się", destroy_user_session_path, method: :delete, class: 'nav-link' %> </li>
+      <% else %>
+        <li class="nav-item"><%= link_to "Logowanie", new_user_session_path, class: 'nav-link' %> </li>
+        <li class="nav-item"><%= link_to "Rejestracja", new_user_registration_path, class: 'nav-link' %> </li>
+      <% end %>
       <li>
         <%= link_to cart_path do %>
           <%= fa_icon "shopping-basket" %>

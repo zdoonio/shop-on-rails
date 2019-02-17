@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resource :cart, controller: "cart", only: [:show, :update, :edit] do
     member do
       post :add_product
