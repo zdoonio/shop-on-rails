@@ -8,7 +8,7 @@
           <% end %>
           <div class="caption">
             <h3><%= link_to product.name, product %></h3>
-            <p><%= simple_format(truncate(product.description, length: 90)) %></p>
+            <p><%= simple_format(product.description.to_s.html_safe, length: 90) %></p>
             <p class="lead"><%= number_to_currency product.price %></p>
             <p>
               <%= link_to add_product_cart_path(product_id: product.id), method: :post, class: "btn btn-primary btn--floating box-shadow-wide preview-meta" do %>

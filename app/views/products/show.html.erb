@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-5 product-item">
       <h1><%= @product.name %></h1>
-      <p class="lead"><%= @product.description %></p>
-      <%= simple_format(@product.long_description) %>
+      <p class="lead"><%= @product.description.to_s.html_safe %></p>
+      <%= simple_format(@product.long_description.to_s.html_safe) %>
 
       <p class="lead"><%= number_to_currency @product.price %></p>
       <p>

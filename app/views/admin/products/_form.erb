@@ -1,7 +1,7 @@
 <%= simple_form_for [:admin, @product] do |form| %>
   <%= form.input :name %>
-  <%= form.input :description %>
-  <%= form.input :long_description %>
+  <%= form.input :description, input_html: { class: 'quill_container' } %>
+  <%= form.input :long_description, input_html: { class: 'quill_container' } %>
   <%= form.input :price %>
   <%= form.association :category %>
   <%= form.input :photo %>

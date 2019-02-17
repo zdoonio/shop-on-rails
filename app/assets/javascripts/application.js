@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require jquery3
 //= require popper
+//= require quill.global
 //= require bootstrap-sprockets
 //= require_tree .
