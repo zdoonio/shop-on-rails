@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   validates :price, numericality: {greater_than: 0.0}
   validates :category, presence: :true
 
-  has_attached_file :photo, styles: { large: "640x480", medium: "320x240", thumb: "150x120"}, :default_url => "https://elartomedia.iplus.com.pl/15456-large_default-6/elarto-hybrydowy-zel-elastic-bezbarwny-rzadki-15-ml.jpg"
+  has_attached_file :photo, styles: { large: "640x480", medium: "320x240", thumb: "150x120"}, :default_url => "/image-missing-md.png"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
   def to_param
