@@ -2,7 +2,7 @@
   <div class="row">
     <% slice.each do |product| %>
       <div class="col-md-4 product-item" onclick="to_product_preview(this)">
-        <div class="thumbnail product-thumb">
+        <div class="thumbnail product-thumb add-to-cart">
           <%= link_to products_path(1) do %>
             <%= image_tag product.photo.url(:medium) %>
           <% end %>
