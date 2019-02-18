@@ -32,6 +32,7 @@ gem 'simplecov', require: false, group: [:test, :development]
 
 #gem users gem
 gem 'devise'
+gem 'devise-i18n'
 # use quilljs to edit html posts WYSWIG
 gem 'quilljs-rails'
 # Use libary for images
