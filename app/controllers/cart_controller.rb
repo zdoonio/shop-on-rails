@@ -6,6 +6,7 @@ class CartController < ApplicationController
   def edit
     @cart = current_cart
     @cart.build_address if @cart.address.blank?
+    add_address_from_account(@cart.address) if current_user
   end
 
   def update
@@ -57,6 +58,16 @@ class CartController < ApplicationController
   end
 
   private
+
+  def add_address_from_account(address)
+    user = current_user
+    address.email = user.email
+    address.first_name = user.first_name
+    address.last_name = user.last_name
+    address.city = user.city
+    address.zip_code = user.zip_code
+    address.street = user.street
+  end
 
   def cart_attributes
     params.require(:order).permit(
