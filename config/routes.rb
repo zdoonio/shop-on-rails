@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'moje-konto', to: 'account#show', as: :account_show
+  post 'moje-konto', to: 'account#update', as: :account_update
   devise_for :users
   resource :cart, controller: "cart", only: [:show, :update, :edit] do
     member do

@@ -1,0 +1,4 @@
+<h1>Moje dane</h1>
+<label for="email">E-mail</label><br>
+<input type="text" class="form-control" disabled id="email" value="<%= @user.email %>"><br>
+<%= render 'account/form', locals: { user: @user} %>

@@ -1,0 +1,8 @@
+<%= simple_form_for :user do |form| %>
+  <%= form.input :first_name, required: false %>
+  <%= form.input :last_name, required: false %>
+  <%= form.input :city, required: false %>
+  <%= form.input :zip_code, required: false %>
+  <%= form.input :street, required: false %>
+  <%= form.submit %>
+<% end %>
