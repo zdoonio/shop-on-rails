@@ -7,7 +7,7 @@
 
       <p class="lead"><%= number_to_currency @product.price %></p>
       <p>
-        <%= link_to add_product_cart_path(product_id: @product.id), method: :post, class: "btn btn-primary btn--floating box-shadow-wide preview-meta" do %>
+        <%= link_to add_product_cart_path(product_id: @product.id), method: :post, class: "btn btn-primary btn--floating box-shadow-wide" do %>
           <%= fa_icon "shopping-basket" %> Dodaj do koszyka
         <% end %>
       </p>
