@@ -1,0 +1,6 @@
+pl:
+  hello: "Witaj świecie"
+
+  errors:
+    messages:
+      invalid_zipcode: "jest nieprawidłowy"

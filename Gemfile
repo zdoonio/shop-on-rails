@@ -60,6 +60,7 @@ gem 'statesman'
 
 gem 'faker'
 
+gem 'validates_zipcode'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
