@@ -48,7 +48,7 @@
 
 <div class="row">
   <div class="col-md-6">
-    <%= form_for [:admin, @order] do |form| %>
+    <%= form_for admin_order_update_path do |form| %>
       <select name="state">
         <% OrderStateMachine.states_map.each do |state_name, human_name| %>
           <option value="<%= state_name %>" <% if !@order.can_transition_to?(state_name) && @order.current_state != state_name %> disabled="disabled" <% end %> > <%= human_name %> </option>

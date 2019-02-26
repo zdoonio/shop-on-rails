@@ -17,7 +17,7 @@
         <td><%= OrderStateMachine.states_map[order.current_state] %></td>
         <td><%= number_to_currency order.full_cost %></td>
         <td>
-          <%= link_to "Edycja", admin_orders_path(order), class: "btn btn-primary btn-xs" %>
+          <%= link_to "Edycja", admin_order_show_path(order.id), class: "btn btn-primary btn-xs" %>
         </td>
       </tr>
     <% end %>

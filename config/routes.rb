@@ -15,7 +15,10 @@ Rails.application.routes.draw do
     root to: "products#index"
     resources :products
     resources :categories
-    resources :orders, only: [:show, :index, :update]
+    get 'orders', to: 'orders#index', as: :orders
+    get 'order/show/:id', to: 'orders#show', as: :order_show
+    post 'order/show/:id', to: 'orders#update', as: :order_update
+    # resources :orders, only: [:show, :index, :update]
   end
   get "regulamin", to: "static#terms", as: :terms
   get "polityka-prywatnosci", to: "static#privacy", as: :privacy
