@@ -1,9 +1,16 @@
 <h1>Zamówienia</h1>
+<div class="search-form">
+  <%= search_form_for [:admin, @q] do |form| %>
+    <%= form.text_field :address_city_cont, placeholder: "Miasto" %>
+    <%= form.text_field :address_last_name_cont, placeholder: "Nazwisko" %>
+    <%= form.submit "Szukaj" %>
+  <% end %>
+
 <table class="table table-striped">
   <thead>
     <tr>
       <th>id</th>
-      <th>Data utworzenia</th>
+      <th><%= sort_link(@q, :created_at, "Data utworzenia") %></th>
       <th>Status</th>
       <th>Suma</th>
       <th>Akcja</th>
