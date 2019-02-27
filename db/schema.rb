@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_20_151809) do
+ActiveRecord::Schema.define(version: 2019_02_27_150537) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "first_name"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2019_02_20_151809) do
     t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.index ["order_id"], name: "index_addresses_on_order_id"
   end
 
@@ -102,6 +101,7 @@ ActiveRecord::Schema.define(version: 2019_02_20_151809) do
     t.string "city"
     t.string "zip_code"
     t.string "street"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

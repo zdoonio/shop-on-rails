@@ -23,6 +23,13 @@ print "Product"
 end
 puts
 
+print "Users"
+User.create!(:email => 'admin@shop.com', :password => 'admin123', :password_confirmation => 'admin123', :zip_code => '00-001', :admin => true)
+print "."
+User.create!(:email => 'user@shop.com', :password => 'user123', :password_confirmation => 'user123', :zip_code => '00-001', :admin => false)
+print "."
+puts
 
+ShippingType.create name: "Odbiór osobisty", cost: 0.0
 ShippingType.create name: "Paczka Pocztowa", cost: 10.0
 ShippingType.create name: "Kurier", cost: 20.0

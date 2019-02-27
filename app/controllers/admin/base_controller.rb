@@ -4,8 +4,14 @@ class Admin::BaseController < ApplicationController
   before_action :authenticate
 
   def authenticate
-    authenticate_or_request_with_http_basic 'Podaj hasło!' do |name, password|
-      name == 'username' && password == 'secret'
+    authenticate_user!
+    unless current_user.admin?
+      to_root
     end
+  end
+
+  def to_root
+    flash[:alert] = "Brak uprawnień"
+    redirect_to root_path
   end
 end
