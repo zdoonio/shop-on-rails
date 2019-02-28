@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is shop server-side application writed on framework Ruby on Rails:
+## Main feauters
+* Creation description of products that are html_friendly using libary Quilljs https://quilljs.com/
+* Handle administration of user orders
 
-Things you may want to cover:
+## Ruby version
+* 2.5.1
 
-* Ruby version
+## Ruby on rails version
+* 5.2.0
 
-* System dependencies
+## System dependencies
+* All dependencies are on file Gemfile.lock
 
-* Configuration
+## Configuration and initialization
+* Download repo
+* type `bundler install`
+* type `rake db:create db:migrate db:seed`
+* type `rails server`
+* server is on, try to log in into sample pass admin@shop.com/ admin123 or try to generate your seeds
+* you can try deploy blog using heroku: https://devcenter.heroku.com/articles/getting-started-with-rails5
 
-* Database creation
+## APP
+https://peaceful-chamber-80293.herokuapp.com/
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## PANEL ADMIN
+https://peaceful-chamber-80293.herokuapp.com/admin
